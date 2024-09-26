@@ -1,0 +1,32 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "main": "./app/dist/js/app.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon ./app/dist/js/app.js",
+    "compile": "tsc",
+    "copy": "copyfiles -f app/src/sql/*.sql app/dist/sql",
+    "build": "concurrently \"npm run compile\" \"npm run copy\"",
+    "watch": "tsc -w",
+    "start": "concurrently \"npm run copy\" \"npm run watch\" \"npm run server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.3",
+    "@types/sqlite3": "^3.1.11",
+    "concurrently": "^9.0.1",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}

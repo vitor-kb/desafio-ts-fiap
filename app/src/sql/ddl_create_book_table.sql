@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS book (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(100),
+    isbn VARCHAR(20),
+    year INTEGER
+)
